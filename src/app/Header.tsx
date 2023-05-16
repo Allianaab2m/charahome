@@ -18,7 +18,7 @@ export default function Header() {
       >
         <Flex flex={1} justify="space-between" maxW="5xl" mx="auto">
           <Heading as="h1" size="lg">
-            <Link href="/">charasite</Link>
+            <Link href="/">charahome</Link>
           </Heading>
           <Button
             as={Link}

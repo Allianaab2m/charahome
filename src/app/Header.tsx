@@ -29,7 +29,7 @@ export default function Header() {
             href="/login"
             _hover={{ bg: "green.300" }}
           >
-            Misskey.artアカウントでログイン
+            ログイン
           </Button>
         </Flex>
       </Flex>

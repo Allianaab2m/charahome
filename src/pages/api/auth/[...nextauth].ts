@@ -1,6 +1,5 @@
 import NextAuth from "next-auth"
 import type { NextAuthOptions } from "next-auth"
-import "./@types/next-auth.d.ts"
 
 import CredentialsProvider from "next-auth/providers/credentials"
 

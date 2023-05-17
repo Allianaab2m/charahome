@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import type { NextAuthOptions } from "next-auth"
+import "./@types/next-auth.d.ts"
 
 import CredentialsProvider from "next-auth/providers/credentials"
 
@@ -9,6 +10,7 @@ export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       credentials: {},
+      /* @ts-ignore */
       authorize: async ({ idToken }: any, _req) => {
         if (idToken) {
           try {
@@ -27,6 +29,7 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
+    /* @ts-ignore */
     async jwt({ token, user }) {
       return { ...token, ...user }
     },

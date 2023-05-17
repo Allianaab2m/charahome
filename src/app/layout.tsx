@@ -1,11 +1,12 @@
-import { IBM_Plex_Sans_JP, Inter } from 'next/font/google'
-import Provider from "./Provider"
+import { IBM_Plex_Sans_JP } from 'next/font/google'
+import { CkProvider, SessionProvider } from "./Provider"
 import Main from './Main'
 import Header from './Header'
 
 const IBMPlexSansJP = IBM_Plex_Sans_JP({
   subsets: ['latin'],
   weight: ["400", "700"],
+  display: "swap"
 })
 
 export const metadata = {
@@ -19,13 +20,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
-      <body className={IBMPlexSansJP.className}>
-        <Provider>
-          <Header />
-          <Main>{children}</Main>
-        </Provider>
-      </body>
-    </html>
+    <SessionProvider>
+      <html lang="ja">
+        <body className={IBMPlexSansJP.className}>
+          <CkProvider>
+            <Header />
+            <Main>{children}</Main>
+          </CkProvider>
+        </body>
+      </html>
+    </SessionProvider>
   )
 }
